@@ -5,6 +5,19 @@
 #   ./MakeKernel
 # This will trigger all of the recompile tasks and post the kernel in the /boot directory.
 
+# Builds the kernel and installs it in the boot directory
+function build_kernel() {
+  make modules
+  make modules_install
+  export KERNELVERSION=$(make kernelversion)
+  cp arch/x86/boot/bzImage /boot/vmlinuz-$kernelversion
+  cp System.map /boot/System.map-$kernelversion
+  new-kernel-pkg --mkinitrd --install $KERNELVERSION
+}
+
+
+
+# Run the script
 build_kernel
 
 # Check out command line arguments
@@ -15,14 +28,3 @@ do
     reboot
   fi
 done
-
-
-# Builds the kernel and installs it in the boot directory
-function build_kernel() {
-  make modules
-  make modules_install
-  export KERNELVERSION=$(make kernelversion)
-  cp arch/x86/boot/bzImage /boot/vmlinuz-$kernelversion
-  cp System.map /boot/System.map-$kernelversion
-  new-kernel-pkg --mkinitrd --install $KERNELVERSION
-}
