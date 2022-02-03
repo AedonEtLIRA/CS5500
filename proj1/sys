@@ -1,0 +1,8 @@
+#include <linux/kernel.h>
+#include <linux/sched.h>
+
+asmlinkage int sys helloworld (void)
+{
+	printk(KERN EMERG ‘‘Hello World!\n’’);
+	return 0;
+}
