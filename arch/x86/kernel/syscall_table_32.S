@@ -337,4 +337,5 @@ ENTRY(sys_call_table)
 	.long sys_rt_tgsigqueueinfo	/* 335 */
 	.long sys_perf_event_open
 	.long sys_helloworld 		/* 337 */
-	.long print_self 		/* 338 */
+	.long sys_print_self 		/* 338 */
+	.long sys_print_other	        /* 339 */

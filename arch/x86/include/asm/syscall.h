@@ -208,7 +208,8 @@ static inline void syscall_set_arguments(struct task_struct *task,
 		}
 }
 asmlinkage int sys_helloworld(void);
-asmlinkage int print_self(void);
+asmlinkage int sys_print_self(void);
+asmlinkage int sys_print_other(int pid);
 #endif	/* CONFIG_X86_32 */
 
 #endif	/* _ASM_X86_SYSCALL_H */

@@ -344,9 +344,10 @@
 #define __NR_perf_event_open	336
 #define __NR_helloworld 	337
 #define __NR_print_self		338
+#define __NR_print_other        339
 #ifdef __KERNEL__
 
-#define NR_syscalls 339
+#define NR_syscalls 340
 
 #define __ARCH_WANT_IPC_PARSE_VERSION
 #define __ARCH_WANT_OLD_READDIR
