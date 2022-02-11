@@ -10,7 +10,6 @@
 #define __NR_print_other 339
 
 int main(int argc, char *argv[]) {
-    printf("Hello, places and things");
     printf("argc is %d\n", argc);
     int pid = atoi(argv[1]);
     printf("argv is %d\n",pid);
