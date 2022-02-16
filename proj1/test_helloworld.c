@@ -7,5 +7,6 @@
 
 int main(int argc, char* argv[]) {
     syscall(__NR_helloworld);
+    printf("Should have printed 'dmesg | tail'");
     return 0;
 }
